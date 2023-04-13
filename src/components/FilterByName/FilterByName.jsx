@@ -1,7 +1,7 @@
 import css from './FilterByName.module.css'
 import {useDispatch, useSelector } from "react-redux";
 import {contactsSearch} from "redux/slice";
-import {selectFilter} from 'redux/selectors'
+import {selectFilter} from 'redux/Contacts/selectors'
 
 
 export const FilterByName = () => {

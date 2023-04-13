@@ -1,11 +1,11 @@
 import css from './ContactsList.module.css';
 import { useEffect} from 'react';
 import {useDispatch, useSelector } from "react-redux";
-import {deleteContact, fetchContacts} from 'redux/operations'
+import {deleteContact, fetchContacts} from 'redux/Contacts/operations'
 import { PropTypes } from "prop-types";
 import {selectFilterContacts,
   selectIsLoading, selectError
-} from 'redux/selectors'
+} from 'redux/Contacts/selectors'
 
 export default function ContactsList () {
 

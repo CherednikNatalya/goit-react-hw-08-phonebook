@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {fetchContacts, addContact, deleteContact} from 'redux/operations'
+import {fetchContacts, addContact, deleteContact} from 'redux/Contacts/operations'
 
 export const contactsSlice = createSlice({
 name: 'contacs',
@@ -9,7 +9,8 @@ initialState: {
         isLoading: false,
         error: null
       },
-      filter: ""
+      filter: "",
+      
 },
 
 extraReducers: builder => {
