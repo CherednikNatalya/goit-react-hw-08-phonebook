@@ -1,25 +1,21 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import {AppBar} from 'components/AppBar/AppBar'
-import { Container, 
-    // Header,Link 
-} from "./SharedLayout.styled";
+// import { Container, 
+//     Header,Link 
+// } from "./SharedLayout.styled";
 import Loader from '../Loader/Loader'
 
 const Layout = () =>{
 return (
-    <Container>
-      {/* <Header>
-        <nav>
-          <Link to="">Home</Link>
-          <Link to="movies">Movies</Link>
-        </nav>
-      </Header> */}
+   
+      <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
      <AppBar />
       <Suspense fallback={<Loader/>}>
         <Outlet />
       </Suspense>
-    </Container>
+      </div>
+   
 )
 }
 

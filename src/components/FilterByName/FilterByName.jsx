@@ -1,6 +1,6 @@
 import css from './FilterByName.module.css'
 import {useDispatch, useSelector } from "react-redux";
-import {contactsSearch} from "redux/slice";
+import {contactsSearch} from "redux/Contacts/slice";
 import {selectFilter} from 'redux/Contacts/selectors'
 
 
