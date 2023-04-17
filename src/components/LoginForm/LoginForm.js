@@ -1,12 +1,11 @@
-import css from './LoginPage.module.css'
 import { useDispatch } from 'react-redux';
-import {logIn} from 'redux/Auth/operations'
+import { logIn } from 'redux/Auth/operations';
+import css from './LoginForm.module.css';
 
-const LoginPage = ()=>{
+export const LoginForm = () => {
+  const dispatch = useDispatch();
 
-const dispatch = useDispatch();
-
-const handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
@@ -18,8 +17,8 @@ const handleSubmit = e => {
     form.reset();
   };
 
-    return(
-        <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
+  return (
+    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <label className={css.label}>
         Email
         <input type="email" name="email" />
@@ -30,7 +29,5 @@ const handleSubmit = e => {
       </label>
       <button type="submit">Log In</button>
     </form>
-    )
-
-}
-export default LoginPage 
+  );
+};

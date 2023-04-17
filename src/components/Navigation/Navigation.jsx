@@ -9,8 +9,8 @@ import { NavLink } from 'react-router-dom';
      <Header>
         
         <div>
-          <NavLink to="goit-react-hw-08-phonebook/" end>Home</NavLink>
-          {isLoggedIn && ( <NavLink to="goit-react-hw-08-phonebook/contacts" end>
+          <NavLink to="/" >Home</NavLink>
+          {isLoggedIn && ( <NavLink to="/contacts">
             Contacts
             </NavLink> )}
         </div>
