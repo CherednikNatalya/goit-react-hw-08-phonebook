@@ -4,15 +4,10 @@
 import { Form } from 'components/Form/Form';
 import { FilterByName } from 'components/FilterByName/FilterByName';
 import  ContactsList from 'components/ContactsList/ContactsList';
-// import { selectLoading } from 'redux/tasks/selectors';
+
 
 export default function Contacts() {
-//   const dispatch = useDispatch();
-//   const isLoading = useSelector(selectLoading);
 
-//   useEffect(() => {
-//     dispatch(fetchTasks());
-//   }, [dispatch]);
 
   return (
     <>

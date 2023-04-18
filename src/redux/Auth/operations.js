@@ -22,12 +22,14 @@ const setAuthHeader = token => {
           const {data} = await axios.post("/users/signup", credentials);
           setAuthHeader(data.token);
           return data;
-        } catch (e) {
-          return thunkAPI.rejectWithValue(e.message);
+        } catch (error) {
+          return thunkAPI.rejectWithValue(error.message);
         }
       }
   )
 
+
+ 
   /*
    * POST @ /users/login
    * body: { email, password }

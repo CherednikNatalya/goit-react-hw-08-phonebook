@@ -8,14 +8,15 @@ import {selectFilterContacts,
 } from 'redux/Contacts/selectors'
 
 export default function ContactsList () {
-
+  const dispatch = useDispatch();
+  
   const isLoading = useSelector(selectIsLoading);
 	const error = useSelector(selectError);
 
   const contacts = useSelector(selectFilterContacts);
   console.log(contacts );
 
-  const dispatch = useDispatch();
+ 
  
   useEffect (()=>{
     dispatch(fetchContacts())},

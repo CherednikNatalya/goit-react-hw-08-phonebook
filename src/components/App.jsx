@@ -62,10 +62,10 @@
 import { Routes, Route } from 'react-router-dom';
 import  Layout  from 'components/Layout/Layout';
 import { lazy } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useEffect } from 'react';
 import { refreshUser } from 'redux/Auth/operations';
-import { selectIsRefreshing } from 'redux/Auth/selectors';
+import { useAuth } from 'hooks';
 import { PrivateRoute } from 'components/PrivetRoute';
 import { RestrictedRoute } from './RestrictedRoute ';
 
@@ -76,7 +76,7 @@ const RegisterPage = lazy(() => import('pages/Register'));
 
 export function App() {
   const dispatch = useDispatch();
-  const isRefreshing = useSelector(selectIsRefreshing);
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(refreshUser());

@@ -5,7 +5,10 @@ export const contactsSlice = createSlice({
 name: 'contacs',
 initialState: {
 	contacts: {
-        items: [],
+        items: [
+          {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+        ],
         isLoading: false,
         error: null
       },
@@ -15,16 +18,18 @@ initialState: {
 
 extraReducers: builder => {
   builder
-  .addCase(fetchContacts.pending, state =>{state.isLoading = true;})
-  .addCase(fetchContacts.fulfilled,(state, {payload}) => {
+  .addCase(fetchContacts.pending, state =>{
+    state.isLoading = true;})
+  .addCase(fetchContacts.fulfilled,(state, action) => {
       state.isLoading = false;
       state.error = null;
-      state.items = payload;
+      state.items = action.payload;
     })
     .addCase(fetchContacts.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.payload;})
-    .addCase(addContact.pending, state =>{state.isLoading = true;})
+    .addCase(addContact.pending, state =>{
+      state.isLoading = true;})
   .addCase(addContact.fulfilled,(state, {payload}) => {
     state.isLoading = false;
     state.error = null;
@@ -33,14 +38,12 @@ extraReducers: builder => {
     .addCase(addContact.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.payload;})
-    .addCase(deleteContact.pending, state =>{state.isLoading = true;})
+    .addCase(deleteContact.pending, state =>
+      {state.isLoading = true;})
   .addCase(deleteContact.fulfilled,(state, {payload}) => {
     state.isLoading = false;
       state.error = null;
-      const index = state.items.findIndex(
-        task => task.id === payload.id
-      );
-      state.items.splice(index, 1);
+      state.items = state.items.filter(item => item.id !== payload.id);
     })
     .addCase(deleteContact.rejected, (state, action) => {
       state.isLoading = false;
