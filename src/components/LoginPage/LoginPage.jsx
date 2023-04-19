@@ -1,6 +1,7 @@
 import css from './LoginPage.module.css'
 import { useDispatch } from 'react-redux';
 import {logIn} from 'redux/Auth/operations'
+import Button from '@mui/material/Button';
 
 const LoginPage = ()=>{
 
@@ -17,20 +18,24 @@ const handleSubmit = e => {
     );
     form.reset();
   };
+  return (
+    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
+     
+     <label className={css.label}>
+          Email
+          <input className={css.inputStyle} type="email" name="email" />
+        </label>
 
-    return(
-        <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label className={css.label}>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
+        <label className={css.label}>
+          Password
+          <input className={css.inputStyle} type="password" name="password" />
+        </label>
+      <Button  type="submit"
+    variant="contained"  size="medium"
+    sx={{m: 1}}> Log In </Button>
+      
     </form>
-    )
+  );
 
 }
 export default LoginPage 

@@ -1,7 +1,7 @@
-import { Header} from 'components/Navigation/Novigation.styled';
+import { Header,  Link } from 'components/Navigation/Novigation.styled';
 import React from 'react';
 import { useAuth } from 'hooks';
-import { NavLink } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
  const Navigation = () => {
   const { isLoggedIn } = useAuth();
@@ -9,10 +9,10 @@ import { NavLink } from 'react-router-dom';
      <Header>
         
         <div>
-          <NavLink to="/" >Home</NavLink>
-          {isLoggedIn && ( <NavLink to="/contacts">
+          <Link to="/" >Home</Link>
+          {isLoggedIn && ( <Link to="/contacts">
             Contacts
-            </NavLink> )}
+            </Link> )}
         </div>
       </Header>
    

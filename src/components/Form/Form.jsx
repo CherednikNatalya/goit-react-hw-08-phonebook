@@ -93,7 +93,7 @@ console.log(contacts);
 />
 </div>
 
-<Button type="submit" width= '1000px' background-color= 'rgb(87, 160, 180)' variant="contained" endIcon={<SendIcon />
+<Button type="submit" style={{width:220}} background-color= 'rgb(235, 243, 243)' variant="contained" endIcon={<SendIcon />
 }>
 Add contact
 </Button>

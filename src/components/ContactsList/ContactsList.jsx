@@ -50,7 +50,6 @@ export default function ContactsList () {
         Delete
       </Button>
 
-        
         </li>
       ))}
     </ul>
