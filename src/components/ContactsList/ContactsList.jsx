@@ -7,17 +7,17 @@ import {selectFilterContacts,
   selectIsLoading, selectError
 } from 'redux/Contacts/selectors'
 
+import Button from '@mui/material/Button';
+
 export default function ContactsList () {
   const dispatch = useDispatch();
   
   const isLoading = useSelector(selectIsLoading);
 	const error = useSelector(selectError);
-
   const contacts = useSelector(selectFilterContacts);
   console.log(contacts );
 
- 
- 
+
   useEffect (()=>{
     dispatch(fetchContacts())},
     [dispatch])
@@ -35,18 +35,18 @@ export default function ContactsList () {
       
       <div className={css.formStyle}>
             <ul className={css.contactsList}>
-      {contacts?.map(({ id, name, phone}) =>(
+      {contacts?.map(({ id, name, number}) =>(
         <li className={css.listItem} key={id}>
           <p className={css.titleli}>
-        {name}: {phone}
+        {name}: {number}
       </p>
-          <button
-            className={css.addButton}
+          <Button variant="contained"
+            // className={css.addButton}
             type="button"
             onClick={() => onDeleteContact (id)}
           >
             Delete
-          </button>
+          </Button>
         </li>
       ))}
     </ul>

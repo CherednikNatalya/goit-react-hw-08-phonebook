@@ -5,10 +5,7 @@ export const contactsSlice = createSlice({
 name: 'contacs',
 initialState: {
 	contacts: {
-        items: [
-          {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-        ],
+        items: [],
         isLoading: false,
         error: null
       },
