@@ -6,6 +6,9 @@ import {addContact} from 'redux/Contacts/operations'
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {selectContacts} from 'redux/Contacts/selectors'
 
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+
 export const Form =() => {
 
  const [name, setName] = useState('')
@@ -90,9 +93,14 @@ console.log(contacts);
 />
 </div>
 
+<Button type="submit" width= '1000px' background-color= 'rgb(87, 160, 180)' variant="contained" endIcon={<SendIcon />
+}>
+Add contact
+</Button>
+{/* 
 <button className={css.addButton} type="submit" >
           Add contact
-        </button>
+        </button> */}
 </form>
         )
     }

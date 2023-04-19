@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px;
+    border-radius: 5px;
     margin-bottom: 16px;
-    border-bottom: 1px solid #2a363b;
+    margin-top: 16px;
+    background: rgb(236, 232, 232)
+    
   }

@@ -8,6 +8,7 @@ import {selectFilterContacts,
 } from 'redux/Contacts/selectors'
 
 import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function ContactsList () {
   const dispatch = useDispatch();
@@ -40,13 +41,16 @@ export default function ContactsList () {
           <p className={css.titleli}>
         {name}: {number}
       </p>
-          <Button variant="contained"
-            // className={css.addButton}
-            type="button"
-            onClick={() => onDeleteContact (id)}
-          >
-            Delete
-          </Button>
+          
+
+<Button 
+ onClick={() => onDeleteContact (id)}
+ variant="contained" startIcon={<DeleteIcon />
+}>
+        Delete
+      </Button>
+
+        
         </li>
       ))}
     </ul>
