@@ -21,6 +21,7 @@ console.log(contacts);
   const numberId = nanoid()
 
   const handleChangeInfo = evt => {
+  
     const {name, value } = evt.target;
     switch (name) {
       case 'name':
